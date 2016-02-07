@@ -1,0 +1,1 @@
+"./PRU_ARMtoPRU_Interrupt.obj" "../AM335x_PRU.cmd" -l"libc.a" 

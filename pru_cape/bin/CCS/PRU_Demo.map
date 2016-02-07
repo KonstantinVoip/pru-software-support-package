@@ -1,0 +1,749 @@
+******************************************************************************
+                  TI ARM Linker PC v5.1.6                      
+******************************************************************************
+>> Linked Mon Jun 15 13:52:17 2015
+
+OUTPUT FILE NAME:   <PRU_Demo.out>
+ENTRY POINT SYMBOL: "Entry"  address: 80000000
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  DDR_MEM               80000000   08000000  0001443d  07febbc3  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+80000000    80000000    00006568   00006568    r-x
+  80000000    80000000    000000d4   000000d4    r-x .text:Entry
+  800000d4    800000d4    00006494   00006494    r-x .text
+80006568    80006568    0000c201   00000000    rw-
+  80006568    80006568    00001000   00000000    rw- HW_UART_data
+  80007568    80007568    00001000   00000000    rw- HW_UART_text
+  80008568    80008568    00001000   00000000    rw- LED0_data
+  80009568    80009568    00001000   00000000    rw- LED0_text
+  8000a568    8000a568    00001000   00000000    rw- LED1_data
+  8000b568    8000b568    00001000   00000000    rw- LED1_text
+  8000c568    8000c568    00001000   00000000    rw- SW_data
+  8000d568    8000d568    00001000   00000000    rw- SW_text
+  8000e568    8000e568    00001000   00000000    rw- TEMPSENSOR0_data
+  8000f568    8000f568    00001000   00000000    rw- TEMPSENSOR0_text
+  80010568    80010568    00001000   00000000    rw- TEMPSENSOR1_data
+  80011568    80011568    00001000   00000000    rw- TEMPSENSOR1_text
+  80012568    80012568    00000201   00000000    rw- .bss
+8001276c    8001276c    00000054   00000054    r--
+  8001276c    8001276c    00000054   00000054    r-- .const
+800127c0    800127c0    00000018   00000000    rw-
+  800127c0    800127c0    00000018   00000000    rw- .data
+800127d8    800127d8    00000c68   00000c68    r--
+  800127d8    800127d8    00000c68   00000c68    r-- .cinit
+87fff000    87fff000    00001000   00000000    rw-
+  87fff000    87fff000    00001000   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.text:Entry 
+*          0    80000000    000000d4     
+                  80000000    000000c8     system.lib : init.obj (.text:Entry)
+                  800000c8    0000000c     rtsv7A8_A_le_v3_eabi.lib : auto_init.obj (.tramp.__TI_auto_init.1)
+
+.text      0    800000d4    00006494     
+                  800000d4    00001d10     drivers.lib : uart_irda_cir.obj (.text)
+                  80001de4    000019f8     utils.lib : uartStdio.obj (.text)
+                  800037dc    00000d40     pru_cape_demo.obj (.text)
+                  8000451c    00000638     utils.lib : ascii.obj (.text)
+                  80004b54    00000488     system.lib : cp15.obj (.text)
+                  80004fdc    000003e4                : interrupt.obj (.text)
+                  800053c0    000002ec     platform.lib : uart.obj (.text)
+                  800056ac    00000284     pru.obj (.text)
+                  80005930    00000280     utils.lib : consoleUtils.obj (.text)
+                  80005bb0    00000180     rtsv7A8_A_le_v3_eabi.lib : memcpy32.obj (.text)
+                  80005d30    0000014c     platform.lib : uartConsole.obj (.text)
+                  80005e7c    0000010c     system.lib : exceptionhandler.obj (.text)
+                  80005f88    000000f4     rtsv7A8_A_le_v3_eabi.lib : u_div32.obj (.text)
+                  8000607c    000000d4                              : auto_init.obj (.text)
+                  80006150    000000b0                              : memset32.obj (.text)
+                  80006200    00000098                              : copy_decompress_rle.obj (.text)
+                  80006298    00000084     system.lib : startup.obj (.text)
+                  8000631c    00000080     rtsv7A8_A_le_v3_eabi.lib : cpy_tbl.obj (.text)
+                  8000639c    00000078                              : exit.obj (.text)
+                  80006414    00000060                              : boot.obj (.text)
+                  80006474    00000060     system.lib : cpu.obj (.text)
+                  800064d4    00000024     rtsv7A8_A_le_v3_eabi.lib : _lock.obj (.text)
+                  800064f8    00000020                              : copy_zero_init.obj (.text:decompress:ZI)
+                  80006518    00000020                              : args_main.obj (.text)
+                  80006538    00000014                              : copy_decompress_none.obj (.text:decompress:none)
+                  8000654c    0000000c     system.lib : cpu.obj (.text:CPUIntStatus)
+                  80006558    00000008     rtsv7A8_A_le_v3_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  80006560    00000008                              : copy_decompress_rle.obj (.text:decompress:rle)
+
+HW_UART_data 
+*          0    80006568    00001000     UNINITIALIZED
+                  80006568    00001000     PRU_Hardware_UART_image.obj (.data)
+
+HW_UART_text 
+*          0    80007568    00001000     UNINITIALIZED
+                  80007568    00001000     PRU_Hardware_UART_image.obj (.text)
+
+LED0_data 
+*          0    80008568    00001000     UNINITIALIZED
+                  80008568    00001000     PRU_LED0_image.obj (.data)
+
+LED0_text 
+*          0    80009568    00001000     UNINITIALIZED
+                  80009568    00001000     PRU_LED0_image.obj (.text)
+
+LED1_data 
+*          0    8000a568    00001000     UNINITIALIZED
+                  8000a568    00001000     PRU_LED1_image.obj (.data)
+
+LED1_text 
+*          0    8000b568    00001000     UNINITIALIZED
+                  8000b568    00001000     PRU_LED1_image.obj (.text)
+
+SW_data    0    8000c568    00001000     UNINITIALIZED
+                  8000c568    00001000     PRU_Switch_image.obj (.data)
+
+SW_text    0    8000d568    00001000     UNINITIALIZED
+                  8000d568    00001000     PRU_Switch_image.obj (.text)
+
+TEMPSENSOR0_data 
+*          0    8000e568    00001000     UNINITIALIZED
+                  8000e568    00001000     PRU_HDQ_TempSensor0_image.obj (.data)
+
+TEMPSENSOR0_text 
+*          0    8000f568    00001000     UNINITIALIZED
+                  8000f568    00001000     PRU_HDQ_TempSensor0_image.obj (.text)
+
+TEMPSENSOR1_data 
+*          0    80010568    00001000     UNINITIALIZED
+                  80010568    00001000     PRU_HDQ_TempSensor1_image.obj (.data)
+
+TEMPSENSOR1_text 
+*          0    80011568    00001000     UNINITIALIZED
+                  80011568    00001000     PRU_HDQ_TempSensor1_image.obj (.text)
+
+.bss       0    80012568    00000201     UNINITIALIZED
+                  80012568    00000200     system.lib : interrupt.obj (.bss:fnRAMVectors)
+                  80012768    00000001     (.common:ConsoleType)
+
+.const     0    8001276c    00000054     
+                  8001276c    00000038     system.lib : startup.obj (.const:vecTbl)
+                  800127a4    00000014     utils.lib : uartStdio.obj (.const:.string)
+                  800127b8    00000004     system.lib : startup.obj (.const)
+                  800127bc    00000004     utils.lib : uartStdio.obj (.const)
+
+.data      0    800127c0    00000018     UNINITIALIZED
+                  800127c0    00000008     rtsv7A8_A_le_v3_eabi.lib : _lock.obj (.data)
+                  800127c8    00000008                              : exit.obj (.data)
+                  800127d0    00000004                              : boot.obj (.data)
+                  800127d4    00000004                              : stkdepth_vars.obj (.data)
+
+.cinit     0    800127d8    00000c68     
+                  800127d8    0000043f     (.cinit.TEMPSENSOR0_text.load) [load image, compression = rle]
+                  80012c17    00000001     --HOLE-- [fill = 0]
+                  80012c18    00000243     (.cinit.HW_UART_text.load) [load image, compression = rle]
+                  80012e5b    00000005     --HOLE-- [fill = 0]
+                  80012e60    0000020f     (.cinit.TEMPSENSOR1_text.load) [load image, compression = rle]
+                  8001306f    00000001     --HOLE-- [fill = 0]
+                  80013070    00000112     (.cinit.TEMPSENSOR0_data.load) [load image, compression = rle]
+                  80013182    00000006     --HOLE-- [fill = 0]
+                  80013188    00000077     (.cinit.SW_text.load) [load image, compression = rle]
+                  800131ff    00000001     --HOLE-- [fill = 0]
+                  80013200    0000006f     (.cinit.LED0_text.load) [load image, compression = rle]
+                  8001326f    00000001     --HOLE-- [fill = 0]
+                  80013270    0000006f     (.cinit.LED1_text.load) [load image, compression = rle]
+                  800132df    00000001     --HOLE-- [fill = 0]
+                  800132e0    00000064     (.cinit.HW_UART_data.load) [load image, compression = rle]
+                  80013344    00000004     --HOLE-- [fill = 0]
+                  80013348    00000011     (.cinit..data.load) [load image, compression = rle]
+                  80013359    00000007     --HOLE-- [fill = 0]
+                  80013360    00000011     (.cinit.LED0_data.load) [load image, compression = rle]
+                  80013371    00000007     --HOLE-- [fill = 0]
+                  80013378    00000011     (.cinit.LED1_data.load) [load image, compression = rle]
+                  80013389    00000007     --HOLE-- [fill = 0]
+                  80013390    00000011     (.cinit.SW_data.load) [load image, compression = rle]
+                  800133a1    00000007     --HOLE-- [fill = 0]
+                  800133a8    00000011     (.cinit.TEMPSENSOR1_data.load) [load image, compression = rle]
+                  800133b9    00000003     --HOLE-- [fill = 0]
+                  800133bc    0000000c     (__TI_handler_table)
+                  800133c8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  800133d0    00000070     (__TI_cinit_table)
+
+.stack     0    87fff000    00001000     UNINITIALIZED
+                  87fff000    00001000     --HOLE--
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 800133d0 records: 14, size/record: 8, table size: 112
+	TEMPSENSOR0_text: load addr=800127d8, load size=0000043f bytes, run addr=8000f568, run size=00001000 bytes, compression=rle
+	HW_UART_text: load addr=80012c18, load size=00000243 bytes, run addr=80007568, run size=00001000 bytes, compression=rle
+	TEMPSENSOR1_text: load addr=80012e60, load size=0000020f bytes, run addr=80011568, run size=00001000 bytes, compression=rle
+	TEMPSENSOR0_data: load addr=80013070, load size=00000112 bytes, run addr=8000e568, run size=00001000 bytes, compression=rle
+	SW_text: load addr=80013188, load size=00000077 bytes, run addr=8000d568, run size=00001000 bytes, compression=rle
+	LED0_text: load addr=80013200, load size=0000006f bytes, run addr=80009568, run size=00001000 bytes, compression=rle
+	LED1_text: load addr=80013270, load size=0000006f bytes, run addr=8000b568, run size=00001000 bytes, compression=rle
+	HW_UART_data: load addr=800132e0, load size=00000064 bytes, run addr=80006568, run size=00001000 bytes, compression=rle
+	.data: load addr=80013348, load size=00000011 bytes, run addr=800127c0, run size=00000018 bytes, compression=rle
+	LED0_data: load addr=80013360, load size=00000011 bytes, run addr=80008568, run size=00001000 bytes, compression=rle
+	LED1_data: load addr=80013378, load size=00000011 bytes, run addr=8000a568, run size=00001000 bytes, compression=rle
+	SW_data: load addr=80013390, load size=00000011 bytes, run addr=8000c568, run size=00001000 bytes, compression=rle
+	TEMPSENSOR1_data: load addr=800133a8, load size=00000011 bytes, run addr=80010568, run size=00001000 bytes, compression=rle
+	.bss: load addr=800133c8, load size=00000008 bytes, run addr=80012568, run size=00000201 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 800133bc records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+FAR CALL TRAMPOLINES
+
+callee name               trampoline name
+   callee addr  tramp addr   call addr  call info
+--------------  -----------  ---------  ----------------
+__TI_auto_init            $Tramp$AA$S$$__TI_auto_init
+   8000607c     800000c8     800000a0   system.lib : init.obj (.text:Entry)
+
+[1 trampolines]
+[1 trampoline calls]
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00200401   .TI.load_image
+800127b8   AM335X_VECTOR_BASE
+8000451c   ASCIIToDigit
+80005f70   AbortHandler
+8000639c   C$$EXIT
+80004fb0   CP15AuxControlFeatureDisable
+80004f9c   CP15AuxControlFeatureEnable
+80004f44   CP15BranchPredictionDisable
+80004f34   CP15BranchPredictionEnable
+80004f28   CP15BranchPredictorInvalidate
+80004f64   CP15ControlFeatureDisable
+80004f78   CP15ControlFeatureEnable
+80004c40   CP15DCacheClean
+80004d78   CP15DCacheCleanBuff
+80004cd4   CP15DCacheCleanFlush
+80004dcc   CP15DCacheCleanFlushBuff
+80004b70   CP15DCacheDisable
+80004b9c   CP15DCacheEnable
+80004bac   CP15DCacheFlush
+80004e20   CP15DCacheFlushBuff
+80004f54   CP15DomainAccessClientSet
+80004b54   CP15ICacheDisable
+80004b8c   CP15ICacheEnable
+80004d68   CP15ICacheFlush
+80004e84   CP15ICacheFlushBuff
+80004ef0   CP15MMUDisable
+80004f08   CP15MMUEnable
+80004fc4   CP15MainIdPrimPartNumGet
+80004ee4   CP15TlbInvalidate
+80004ed8   CP15Ttb0Set
+80004f8c   CP15TtbCtlTtb0Config
+80004f1c   CP15VectorBaseAddrSet
+80006490   CPUAbortHandler
+8000654c   CPUIntStatus
+80006474   CPUSwitchToPrivilegedMode
+8000647c   CPUSwitchToUserMode
+800064b4   CPUfiqd
+800064c4   CPUfiqe
+80006494   CPUirqd
+800064a4   CPUirqe
+80005ab8   ConsoleUtilsGetChar
+80005a30   ConsoleUtilsGets
+80005930   ConsoleUtilsInit
+80005970   ConsoleUtilsPrintf
+80005b28   ConsoleUtilsPutChar
+80005a7c   ConsoleUtilsPuts
+800059c8   ConsoleUtilsScanf
+8000593c   ConsoleUtilsSetType
+80004a0c   DateToStr
+800045f0   DigitToASCII
+80000000   Entry
+800047a0   EthrAddrToStr
+80005f6c   FIQHandler
+80003f80   HDQTest
+80005ec0   IRQHandler
+80005024   IntAINTCInit
+8000515c   IntActiveIrqNumGet
+800051f4   IntCurrIrqPriorityGet
+8000534c   IntDisable
+80005364   IntEnable
+800051e0   IntFuncClkAutoGateSet
+800051cc   IntFuncClkFreeRunSet
+80005148   IntIfClkAutoGateSet
+80005134   IntIfClkFreeRunSet
+80005334   IntMasterFIQDisable
+80005328   IntMasterFIQEnable
+8000531c   IntMasterIRQDisable
+80005310   IntMasterIRQEnable
+80005340   IntMasterStatusGet
+800052d4   IntPendingIrqMaskedStatusGet
+80005094   IntPrioritySet
+80005204   IntPriorityThresholdGet
+80005214   IntPriorityThresholdSet
+80005190   IntProtectionDisable
+80005180   IntProtectionEnable
+80005234   IntRawStatusGet
+80004fe0   IntRegister
+800052a4   IntSoftwareIntClear
+80005274   IntSoftwareIntSet
+8000516c   IntSpurIrqFlagGet
+800051b8   IntSyncClkAutoGateSet
+800051a4   IntSyncClkFreeRunSet
+80005100   IntSystemDisable
+800050cc   IntSystemEnable
+80005004   IntUnRegister
+80008568   LED0_DATA
+80009568   LED0_INST
+8000a568   LED1_DATA
+8000b568   LED1_INST
+80003df8   LEDTest
+80010568   MASTER_DATA
+80011568   MASTER_INST
+80003804   MainMenu
+80004260   PRUCapePinmux
+80005858   PRUEnable
+800058b8   PRUHalt
+800056ac   PRUICSSInit
+80005834   PRUICSSReset
+80005744   PRUMemFill
+8000576c   PRUMemLoad
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+8000e568   SLAVE_DATA
+8000f568   SLAVE_INST
+80005e98   SVC_Handler
+8000c568   SW_DATA
+8000d568   SW_INST
+8000468c   StrToEthrAddr
+80003ee8   SwitchTest
+800048c4   TimeToStr
+800053f4   UART0ModuleClkConfig
+800055fc   UART1ModuleClkConfig
+80005634   UART2ModuleClkConfig
+80001714   UARTAutoIdleModeControl
+800014c0   UARTAutoRTSAutoCTSControl
+80001bfc   UARTAutobaudParityGet
+80001c94   UARTAutobaudSpeedGet
+80001c48   UARTAutobaudWordLenGet
+8000045c   UARTBreakCtl
+8000119c   UARTCharGet
+80001144   UARTCharGetNonBlocking
+800011f4   UARTCharGetTimeout
+80001284   UARTCharPut
+800010d8   UARTCharPutNonBlocking
+80001084   UARTCharsAvail
+80005e58   UARTConsoleGetc
+80005e1c   UARTConsoleInit
+80005e40   UARTConsolePutc
+80001b6c   UARTDMACounterResetControl
+80000998   UARTDMADisable
+8000093c   UARTDMAEnable
+80001a84   UARTDSRInterruptControl
+800003a0   UARTDivisorLatchDisable
+8000037c   UARTDivisorLatchEnable
+800001f8   UARTDivisorLatchWrite
+80000134   UARTDivisorValCompute
+80000abc   UARTEnhanFuncBitValRestore
+80000a5c   UARTEnhanFuncEnable
+800012f8   UARTFIFOCharGet
+800012d8   UARTFIFOCharPut
+80000578   UARTFIFOConfig
+8000146c   UARTFIFOEnableStatusGet
+800009d0   UARTFIFORegisterWrite
+80001a20   UARTFIFOTrigLvlGranControl
+80001314   UARTFIFOWrite
+80001758   UARTFlowCtrlTrigLvlConfig
+800022d4   UARTGetHexNum
+80002220   UARTGetNum
+80002540   UARTGetc
+80001f4c   UARTGets
+8000168c   UARTIdleModeConfigure
+800037dc   UARTInit
+80000f68   UARTIntDisable
+80000e84   UARTIntEnable
+800013cc   UARTIntIdentityGet
+80001418   UARTIntPendingStatusGet
+800004a0   UARTLineCharacConfig
+800018cc   UARTLoopbackModeControl
+80001940   UARTModemControlClear
+80001910   UARTModemControlSet
+8000198c   UARTModemStatusChangeCheck
+80001970   UARTModemStatusGet
+80001658   UARTModuleReset
+80001d40   UARTModuleVersionNumberGet
+800000d4   UARTOperatingModeSelect
+8000055c   UARTParityModeGet
+80000518   UARTParityModeSet
+800053c0   UARTPinMuxSetup
+800032cc   UARTPrintf
+80001614   UARTPulseShapingControl
+800020f4   UARTPutHexNum
+80001ff8   UARTPutNum
+8000252c   UARTPutc
+80001e94   UARTPuts
+80001b50   UARTRXCTSDSRTransitionStatusGet
+80001b0c   UARTRXCTSDSRWakeUpConfigure
+8000043c   UARTRegConfModeRestore
+800003c4   UARTRegConfigModeEnable
+800019a8   UARTResumeOperation
+80001380   UARTRxErrorGet
+80001be4   UARTRxFIFOLevelGet
+80002ae4   UARTScanf
+80001d24   UARTScratchPadRegRead
+80001ce0   UARTScratchPadRegWrite
+800015b0   UARTSoftwareFlowCtrlOptSet
+80001030   UARTSpaceAvail
+8000154c   UARTSpecialCharDetectControl
+80001e88   UARTStdioInit
+80000b20   UARTSubConfigMSRSPRModeEn
+80000bf8   UARTSubConfigTCRTLRModeEn
+80000cd0   UARTSubConfigXOFFModeEn
+80000da8   UARTTCRTLRBitValRestore
+80004060   UARTTest
+80001d5c   UARTTxDMAThresholdControl
+80001da0   UARTTxDMAThresholdValConfig
+80001ac8   UARTTxEmptyIntControl
+80001bb0   UARTTxFIFOFullStatusGet
+80001bcc   UARTTxFIFOLevelGet
+800016d0   UARTWakeUpControl
+800019f0   UARTWakeUpEventsDisable
+800019c0   UARTWakeUpEventsEnable
+800017a8   UARTXON1XOFF1ValProgram
+800017d8   UARTXON2XOFF2ValProgram
+80001808   UARTXONAnyFeatureControl
+80006568   UART_DATA
+80007568   UART_INST
+800025c0   UARTprintf
+8000254c   UARTwrite
+80005f70   UndefInstHandler
+88000000   __STACK_END
+00001000   __STACK_SIZE
+800133d0   __TI_CINIT_Base
+80013440   __TI_CINIT_Limit
+800133bc   __TI_Handler_Table_Base
+800133c8   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+8000607c   __TI_auto_init
+800127c8   __TI_cleanup_ptr
+80006538   __TI_decompress_none
+80006560   __TI_decompress_rle
+80006558   __TI_decompress_rle24
+800127cc   __TI_dtors_ptr
+800127d8   __TI_static_base__
+800064f8   __TI_zero_init
+80006150   __aeabi_memclr
+80006150   __aeabi_memclr4
+80006150   __aeabi_memclr8
+80005bb0   __aeabi_memcpy
+80005bb0   __aeabi_memcpy4
+80005bb0   __aeabi_memcpy8
+80006154   __aeabi_memset
+80006154   __aeabi_memset4
+80006154   __aeabi_memset8
+80005f88   __aeabi_uidivmod
+ffffffff   __binit__
+ffffffff   __c_args__
+87fff000   __stack
+80006518   _args_main
+80006414   _c_int00
+800127c0   _lock
+800064ec   _nop
+800064e0   _register_lock
+800064d4   _register_unlock
+800127d0   _stkchk_called
+800127c4   _unlock
+800063a4   abort
+ffffffff   binit
+80012769   bss_end
+80012568   bss_start
+8000631c   copy_in
+800063b0   exit
+80012568   fnRAMVectors
+800037e8   main
+800127d4   main_func_sp
+80005bb0   memcpy
+80006160   memset
+80006298   start_boot
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000001   __TI_args_main
+00001000   __STACK_SIZE
+00200401   .TI.load_image
+80000000   Entry
+800000d4   UARTOperatingModeSelect
+80000134   UARTDivisorValCompute
+800001f8   UARTDivisorLatchWrite
+8000037c   UARTDivisorLatchEnable
+800003a0   UARTDivisorLatchDisable
+800003c4   UARTRegConfigModeEnable
+8000043c   UARTRegConfModeRestore
+8000045c   UARTBreakCtl
+800004a0   UARTLineCharacConfig
+80000518   UARTParityModeSet
+8000055c   UARTParityModeGet
+80000578   UARTFIFOConfig
+8000093c   UARTDMAEnable
+80000998   UARTDMADisable
+800009d0   UARTFIFORegisterWrite
+80000a5c   UARTEnhanFuncEnable
+80000abc   UARTEnhanFuncBitValRestore
+80000b20   UARTSubConfigMSRSPRModeEn
+80000bf8   UARTSubConfigTCRTLRModeEn
+80000cd0   UARTSubConfigXOFFModeEn
+80000da8   UARTTCRTLRBitValRestore
+80000e84   UARTIntEnable
+80000f68   UARTIntDisable
+80001030   UARTSpaceAvail
+80001084   UARTCharsAvail
+800010d8   UARTCharPutNonBlocking
+80001144   UARTCharGetNonBlocking
+8000119c   UARTCharGet
+800011f4   UARTCharGetTimeout
+80001284   UARTCharPut
+800012d8   UARTFIFOCharPut
+800012f8   UARTFIFOCharGet
+80001314   UARTFIFOWrite
+80001380   UARTRxErrorGet
+800013cc   UARTIntIdentityGet
+80001418   UARTIntPendingStatusGet
+8000146c   UARTFIFOEnableStatusGet
+800014c0   UARTAutoRTSAutoCTSControl
+8000154c   UARTSpecialCharDetectControl
+800015b0   UARTSoftwareFlowCtrlOptSet
+80001614   UARTPulseShapingControl
+80001658   UARTModuleReset
+8000168c   UARTIdleModeConfigure
+800016d0   UARTWakeUpControl
+80001714   UARTAutoIdleModeControl
+80001758   UARTFlowCtrlTrigLvlConfig
+800017a8   UARTXON1XOFF1ValProgram
+800017d8   UARTXON2XOFF2ValProgram
+80001808   UARTXONAnyFeatureControl
+800018cc   UARTLoopbackModeControl
+80001910   UARTModemControlSet
+80001940   UARTModemControlClear
+80001970   UARTModemStatusGet
+8000198c   UARTModemStatusChangeCheck
+800019a8   UARTResumeOperation
+800019c0   UARTWakeUpEventsEnable
+800019f0   UARTWakeUpEventsDisable
+80001a20   UARTFIFOTrigLvlGranControl
+80001a84   UARTDSRInterruptControl
+80001ac8   UARTTxEmptyIntControl
+80001b0c   UARTRXCTSDSRWakeUpConfigure
+80001b50   UARTRXCTSDSRTransitionStatusGet
+80001b6c   UARTDMACounterResetControl
+80001bb0   UARTTxFIFOFullStatusGet
+80001bcc   UARTTxFIFOLevelGet
+80001be4   UARTRxFIFOLevelGet
+80001bfc   UARTAutobaudParityGet
+80001c48   UARTAutobaudWordLenGet
+80001c94   UARTAutobaudSpeedGet
+80001ce0   UARTScratchPadRegWrite
+80001d24   UARTScratchPadRegRead
+80001d40   UARTModuleVersionNumberGet
+80001d5c   UARTTxDMAThresholdControl
+80001da0   UARTTxDMAThresholdValConfig
+80001e88   UARTStdioInit
+80001e94   UARTPuts
+80001f4c   UARTGets
+80001ff8   UARTPutNum
+800020f4   UARTPutHexNum
+80002220   UARTGetNum
+800022d4   UARTGetHexNum
+8000252c   UARTPutc
+80002540   UARTGetc
+8000254c   UARTwrite
+800025c0   UARTprintf
+80002ae4   UARTScanf
+800032cc   UARTPrintf
+800037dc   UARTInit
+800037e8   main
+80003804   MainMenu
+80003df8   LEDTest
+80003ee8   SwitchTest
+80003f80   HDQTest
+80004060   UARTTest
+80004260   PRUCapePinmux
+8000451c   ASCIIToDigit
+800045f0   DigitToASCII
+8000468c   StrToEthrAddr
+800047a0   EthrAddrToStr
+800048c4   TimeToStr
+80004a0c   DateToStr
+80004b54   CP15ICacheDisable
+80004b70   CP15DCacheDisable
+80004b8c   CP15ICacheEnable
+80004b9c   CP15DCacheEnable
+80004bac   CP15DCacheFlush
+80004c40   CP15DCacheClean
+80004cd4   CP15DCacheCleanFlush
+80004d68   CP15ICacheFlush
+80004d78   CP15DCacheCleanBuff
+80004dcc   CP15DCacheCleanFlushBuff
+80004e20   CP15DCacheFlushBuff
+80004e84   CP15ICacheFlushBuff
+80004ed8   CP15Ttb0Set
+80004ee4   CP15TlbInvalidate
+80004ef0   CP15MMUDisable
+80004f08   CP15MMUEnable
+80004f1c   CP15VectorBaseAddrSet
+80004f28   CP15BranchPredictorInvalidate
+80004f34   CP15BranchPredictionEnable
+80004f44   CP15BranchPredictionDisable
+80004f54   CP15DomainAccessClientSet
+80004f64   CP15ControlFeatureDisable
+80004f78   CP15ControlFeatureEnable
+80004f8c   CP15TtbCtlTtb0Config
+80004f9c   CP15AuxControlFeatureEnable
+80004fb0   CP15AuxControlFeatureDisable
+80004fc4   CP15MainIdPrimPartNumGet
+80004fe0   IntRegister
+80005004   IntUnRegister
+80005024   IntAINTCInit
+80005094   IntPrioritySet
+800050cc   IntSystemEnable
+80005100   IntSystemDisable
+80005134   IntIfClkFreeRunSet
+80005148   IntIfClkAutoGateSet
+8000515c   IntActiveIrqNumGet
+8000516c   IntSpurIrqFlagGet
+80005180   IntProtectionEnable
+80005190   IntProtectionDisable
+800051a4   IntSyncClkFreeRunSet
+800051b8   IntSyncClkAutoGateSet
+800051cc   IntFuncClkFreeRunSet
+800051e0   IntFuncClkAutoGateSet
+800051f4   IntCurrIrqPriorityGet
+80005204   IntPriorityThresholdGet
+80005214   IntPriorityThresholdSet
+80005234   IntRawStatusGet
+80005274   IntSoftwareIntSet
+800052a4   IntSoftwareIntClear
+800052d4   IntPendingIrqMaskedStatusGet
+80005310   IntMasterIRQEnable
+8000531c   IntMasterIRQDisable
+80005328   IntMasterFIQEnable
+80005334   IntMasterFIQDisable
+80005340   IntMasterStatusGet
+8000534c   IntDisable
+80005364   IntEnable
+800053c0   UARTPinMuxSetup
+800053f4   UART0ModuleClkConfig
+800055fc   UART1ModuleClkConfig
+80005634   UART2ModuleClkConfig
+800056ac   PRUICSSInit
+80005744   PRUMemFill
+8000576c   PRUMemLoad
+80005834   PRUICSSReset
+80005858   PRUEnable
+800058b8   PRUHalt
+80005930   ConsoleUtilsInit
+8000593c   ConsoleUtilsSetType
+80005970   ConsoleUtilsPrintf
+800059c8   ConsoleUtilsScanf
+80005a30   ConsoleUtilsGets
+80005a7c   ConsoleUtilsPuts
+80005ab8   ConsoleUtilsGetChar
+80005b28   ConsoleUtilsPutChar
+80005bb0   __aeabi_memcpy
+80005bb0   __aeabi_memcpy4
+80005bb0   __aeabi_memcpy8
+80005bb0   memcpy
+80005e1c   UARTConsoleInit
+80005e40   UARTConsolePutc
+80005e58   UARTConsoleGetc
+80005e98   SVC_Handler
+80005ec0   IRQHandler
+80005f6c   FIQHandler
+80005f70   AbortHandler
+80005f70   UndefInstHandler
+80005f88   __aeabi_uidivmod
+8000607c   __TI_auto_init
+80006150   __aeabi_memclr
+80006150   __aeabi_memclr4
+80006150   __aeabi_memclr8
+80006154   __aeabi_memset
+80006154   __aeabi_memset4
+80006154   __aeabi_memset8
+80006160   memset
+80006298   start_boot
+8000631c   copy_in
+8000639c   C$$EXIT
+800063a4   abort
+800063b0   exit
+80006414   _c_int00
+80006474   CPUSwitchToPrivilegedMode
+8000647c   CPUSwitchToUserMode
+80006490   CPUAbortHandler
+80006494   CPUirqd
+800064a4   CPUirqe
+800064b4   CPUfiqd
+800064c4   CPUfiqe
+800064d4   _register_unlock
+800064e0   _register_lock
+800064ec   _nop
+800064f8   __TI_zero_init
+80006518   _args_main
+80006538   __TI_decompress_none
+8000654c   CPUIntStatus
+80006558   __TI_decompress_rle24
+80006560   __TI_decompress_rle
+80006568   UART_DATA
+80007568   UART_INST
+80008568   LED0_DATA
+80009568   LED0_INST
+8000a568   LED1_DATA
+8000b568   LED1_INST
+8000c568   SW_DATA
+8000d568   SW_INST
+8000e568   SLAVE_DATA
+8000f568   SLAVE_INST
+80010568   MASTER_DATA
+80011568   MASTER_INST
+80012568   bss_start
+80012568   fnRAMVectors
+80012769   bss_end
+800127b8   AM335X_VECTOR_BASE
+800127c0   _lock
+800127c4   _unlock
+800127c8   __TI_cleanup_ptr
+800127cc   __TI_dtors_ptr
+800127d0   _stkchk_called
+800127d4   main_func_sp
+800127d8   __TI_static_base__
+800133bc   __TI_Handler_Table_Base
+800133c8   __TI_Handler_Table_Limit
+800133d0   __TI_CINIT_Base
+80013440   __TI_CINIT_Limit
+87fff000   __stack
+88000000   __STACK_END
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+
+[257 symbols]

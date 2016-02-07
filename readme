@@ -1,0 +1,7 @@
+#include <stdio.h>
+
+void main(void)
+{
+
+printf ("Hello PRU module\n\r");
+}
