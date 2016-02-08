@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <link_info>
-   <banner>PRU Linker PC v2.1.1</banner>
+   <banner>PRU Linker PC v2.1.2</banner>
    <copyright>Copyright (c) 2012-2015 Texas Instruments Incorporated</copyright>
-   <link_time>0x55c0a3cb</link_time>
+   <link_time>0x56b85eeb</link_time>
    <link_errors>0x0</link_errors>
    <output_file>PRU_LED1.out</output_file>
    <entry_point>
@@ -17,37 +17,37 @@
          <name>PRU_LED1.obj</name>
       </input_file>
       <input_file id="fl-14">
-         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.1\lib\</path>
+         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.2\lib\</path>
          <kind>archive</kind>
          <file>rtspruv3_le.lib</file>
          <name>boot.obj</name>
       </input_file>
       <input_file id="fl-15">
-         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.1\lib\</path>
+         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.2\lib\</path>
          <kind>archive</kind>
          <file>rtspruv3_le.lib</file>
          <name>boot_special.obj</name>
       </input_file>
       <input_file id="fl-16">
-         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.1\lib\</path>
+         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.2\lib\</path>
          <kind>archive</kind>
          <file>rtspruv3_le.lib</file>
          <name>exit.obj</name>
       </input_file>
       <input_file id="fl-17">
-         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.1\lib\</path>
+         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.2\lib\</path>
          <kind>archive</kind>
          <file>rtspruv3_le.lib</file>
          <name>_lock.obj</name>
       </input_file>
       <input_file id="fl-18">
-         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.1\lib\</path>
+         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.2\lib\</path>
          <kind>archive</kind>
          <file>rtspruv3_le.lib</file>
          <name>args_main.obj</name>
       </input_file>
       <input_file id="fl-19">
-         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.1\lib\</path>
+         <path>C:\ti\ccsv6\tools\compiler\ti-cgt-pru_2.1.2\lib\</path>
          <kind>archive</kind>
          <file>rtspruv3_le.lib</file>
          <name>autoinit.obj</name>
@@ -197,34 +197,34 @@
          <name>.debug_info</name>
          <load_address>0x18ac</load_address>
          <run_address>0x18ac</run_address>
-         <size>0xd2</size>
+         <size>0xec</size>
          <input_file_ref idref="fl-14"/>
       </object_component>
       <object_component id="oc-2a">
          <name>.debug_info</name>
-         <load_address>0x197e</load_address>
-         <run_address>0x197e</run_address>
-         <size>0x158</size>
+         <load_address>0x1998</load_address>
+         <run_address>0x1998</run_address>
+         <size>0x172</size>
          <input_file_ref idref="fl-15"/>
       </object_component>
       <object_component id="oc-7d">
          <name>.debug_info</name>
-         <load_address>0x1ad6</load_address>
-         <run_address>0x1ad6</run_address>
-         <size>0x10a</size>
+         <load_address>0x1b0a</load_address>
+         <run_address>0x1b0a</run_address>
+         <size>0x124</size>
          <input_file_ref idref="fl-16"/>
       </object_component>
       <object_component id="oc-50">
          <name>.debug_info</name>
-         <load_address>0x1be0</load_address>
-         <run_address>0x1be0</run_address>
-         <size>0x10b</size>
+         <load_address>0x1c2e</load_address>
+         <run_address>0x1c2e</run_address>
+         <size>0x125</size>
          <input_file_ref idref="fl-16"/>
       </object_component>
       <object_component id="oc-200">
          <name>.debug_info</name>
-         <load_address>0x1ceb</load_address>
-         <run_address>0x1ceb</run_address>
+         <load_address>0x1d53</load_address>
+         <run_address>0x1d53</run_address>
          <size>0xaf</size>
       </object_component>
       <object_component id="oc-b7">
@@ -336,28 +336,28 @@
          <name>.debug_frame</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0x133</size>
+         <size>0x136</size>
          <input_file_ref idref="fl-2"/>
       </object_component>
       <object_component id="oc-2e">
          <name>.debug_frame</name>
-         <load_address>0x133</load_address>
-         <run_address>0x133</run_address>
-         <size>0x132</size>
+         <load_address>0x136</load_address>
+         <run_address>0x136</run_address>
+         <size>0x135</size>
          <input_file_ref idref="fl-15"/>
       </object_component>
       <object_component id="oc-81">
          <name>.debug_frame</name>
-         <load_address>0x265</load_address>
-         <run_address>0x265</run_address>
-         <size>0x133</size>
+         <load_address>0x26b</load_address>
+         <run_address>0x26b</run_address>
+         <size>0x136</size>
          <input_file_ref idref="fl-16"/>
       </object_component>
       <object_component id="oc-54">
          <name>.debug_frame</name>
-         <load_address>0x398</load_address>
-         <run_address>0x398</run_address>
-         <size>0x133</size>
+         <load_address>0x3a1</load_address>
+         <run_address>0x3a1</run_address>
+         <size>0x136</size>
          <input_file_ref idref="fl-16"/>
       </object_component>
       <object_component id="oc-b6">
@@ -2011,7 +2011,7 @@
          <name>.debug_info</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0x1d9a</size>
+         <size>0x1e02</size>
          <contents>
             <object_component_ref idref="oc-88"/>
             <object_component_ref idref="oc-30"/>
@@ -2058,7 +2058,7 @@
          <name>.debug_frame</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0x4cb</size>
+         <size>0x4d7</size>
          <contents>
             <object_component_ref idref="oc-4d"/>
             <object_component_ref idref="oc-2e"/>

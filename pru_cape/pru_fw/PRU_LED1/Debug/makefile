@@ -4,7 +4,7 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccsv6/tools/compiler/ti-cgt-pru_2.1.1
+CG_TOOL_ROOT := C:/ti/ccsv6/tools/compiler/ti-cgt-pru_2.1.2
 
 ORDERED_OBJS += \
 "./PRU_LED1.obj" \
@@ -133,13 +133,13 @@ all: PRU_LED1.out secondary-outputs
 PRU_LED1.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: PRU Linker'
-	"C:/ti/ccsv6/tools/compiler/ti-cgt-pru_2.1.1/bin/clpru" -v3 -g --define=am3359 --define=pru0 --diag_warning=225 --display_error_number --diag_wrap=off --endian=little --hardware_mac=on -z -m"PRU_LED1.map" --heap_size=0x100 --stack_size=0x100 -i"C:/ti/ccsv6/tools/compiler/ti-cgt-pru_2.1.1/lib" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-pru_2.1.1/include" --reread_libs --define=PRU_CORE=1 --warn_sections --xml_link_info="PRU_LED1_linkInfo.xml" --rom_model -o "PRU_LED1.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv6/tools/compiler/ti-cgt-pru_2.1.2/bin/clpru" -v3 -g --define=am3359 --define=pru0 --diag_wrap=off --diag_warning=225 --display_error_number --endian=little --hardware_mac=on -z -m"PRU_LED1.map" --stack_size=0x100 --heap_size=0x100 -i"C:/ti/ccsv6/tools/compiler/ti-cgt-pru_2.1.2/lib" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-pru_2.1.2/include" --reread_libs --define=PRU_CORE=1 --warn_sections --xml_link_info="PRU_LED1_linkInfo.xml" --rom_model -o "PRU_LED1.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 PRU_LED1_image.obj: $(EXE_OUTPUTS)
 	@echo 'Invoking: PRU Hex Utility'
-	"C:/ti/ccsv6/tools/compiler/ti-cgt-pru_2.1.1/bin/hexpru"  -o "PRU_LED1_image.obj" $(EXE_OUTPUTS__QUOTED)  C:/Share/pru-software-support-package/pru_cape/pru_fw/PRU_LED1/PRU_HexUtil.cmd
+	"C:/ti/ccsv6/tools/compiler/ti-cgt-pru_2.1.2/bin/hexpru"  -o "PRU_LED1_image.obj" $(EXE_OUTPUTS__QUOTED)  C:/Share/pru-software-support-package/pru_cape/pru_fw/PRU_LED1/PRU_HexUtil.cmd
 	@echo 'Finished building: $@'
 	@echo ' '
 
